@@ -16,36 +16,35 @@ export default component$(() => {
 
   return (
     <>
-      <div class="px-4 py-5 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
+      <div class="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-5">
         <div class="relative flex items-center justify-between">
           <div class="flex items-center">
-            <a href="#" aria-label="Company" title="Company" class="inline-flex items-center mr-8">
-              <img  width="752" height="279" src="/image-removebg-preview.png" alt="logo" class="w-32"/>
-              {/* <ImgImageRemovebgPreview name="image-removebg-preview.png" /> */}
+            <a href="#" aria-label="Company" title="Company" class="inline-flex items-center mr-4 lg:mr-8">
+              <img width="752" height="279" src="/image-removebg-preview.png" alt="logo" class="w-24 lg:w-32"/>
             </a>
-            <ul class="flex items-center hidden space-x-8 lg:flex">
+            <ul class="items-center hidden space-x-6 lg:flex lg:space-x-8">
               <li>
-                <a href="#" aria-label="Process" title="Process" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
+                <a href="#" aria-label="Process" title="Process" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 text-sm lg:text-base">
                   Process
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="Contact Us" title="Contact Us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
+                <a href="#" aria-label="Contact Us" title="Contact Us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 text-sm lg:text-base">
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#" aria-label="About us" title="About us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
+                <a href="#" aria-label="About us" title="About us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 text-sm lg:text-base">
                   About us
                 </a>
               </li>
             </ul>
           </div>
-          <ul class="flex items-center hidden space-x-8 lg:flex">
+          <ul class="items-center hidden space-x-6 lg:flex lg:space-x-8">
             <li>
               <a
                 href="#"
-                class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                class="inline-flex items-center justify-center h-10 lg:h-12 px-4 lg:px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none text-sm lg:text-base"
                 aria-label="Get Quote"
                 title="Get Quote"
               >
@@ -60,60 +59,73 @@ export default component$(() => {
               class="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
               onClick$={toggleMenu}
             >
-              <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
+              <svg class="w-6 text-gray-600" viewBox="0 0 24 24">
                 <path fill="currentColor" d="M23,13H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,13,23,13z"></path>
                 <path fill="currentColor" d="M23,6H1C0.4,6,0,5.6,0,5s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,6,23,6z"></path>
                 <path fill="currentColor" d="M23,20H1c-0.6,0-1-0.4-1-1s0.4-1,1-1h22c0.6,0,1,0.4,1,1S23.6,20,23,20z"></path>
               </svg>
             </button>
-            <div id="mobileMenu" class={`absolute top-0 left-0 w-full ${state.isMenuOpen ? '' : 'hidden'} z-10`}>
-              <div class="p-5 bg-white border rounded shadow-sm">
-                <div class="flex items-center justify-between mb-4">
-                  <div>
-                    <a href="#" aria-label="Company" title="Company" class="inline-flex items-center">
-                    <img  width="752" height="279" src="/image-removebg-preview.png" alt="logo" class="w-32"/>
-                    </a>
+            <div id="mobileMenu" class={`fixed top-0 left-0 w-full h-full ${state.isMenuOpen ? 'block' : 'hidden'} z-50`}>
+              <div class="absolute inset-0 bg-black bg-opacity-50" onClick$={toggleMenu}></div>
+              <div class="relative w-4/5 max-w-sm h-full bg-white shadow-lg overflow-y-auto">
+                <div class="p-6">
+                  <div class="flex items-center justify-between mb-8">
+                    <div>
+                      <a href="#" aria-label="Company" title="Company" class="inline-flex items-center">
+                        <img width="752" height="279" src="/image-removebg-preview.png" alt="logo" class="w-28"/>
+                      </a>
+                    </div>
+                    <div>
+                      <button
+                        aria-label="Close Menu"
+                        title="Close Menu"
+                        class="p-2 transition duration-200 rounded-full hover:bg-gray-100 focus:bg-gray-100 focus:outline-none focus:shadow-outline"
+                        onClick$={toggleMenu}
+                      >
+                        <svg class="w-6 text-gray-600" viewBox="0 0 24 24">
+                          <path
+                            fill="currentColor"
+                            d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </div>
                   </div>
-                  <div>
-                    <button
-                      aria-label="Close Menu"
-                      title="Close Menu"
-                      class="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                      onClick$={toggleMenu}
-                    >
-                      <svg class="w-5 text-gray-600" viewBox="0 0 24 24">
-                        <path
-                          fill="currentColor"
-                          d="M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z"
-                        ></path>
-                      </svg>
-                    </button>
-                  </div>
+                  <nav>
+                    <ul class="space-y-6">
+                      <li>
+                        <a href="#" aria-label="Our product" title="Our product" class="block py-3 text-lg font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 border-b border-gray-100">
+                          Product
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" aria-label="Process" title="Process" class="block py-3 text-lg font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 border-b border-gray-100">
+                          Process
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" aria-label="Contact Us" title="Contact Us" class="block py-3 text-lg font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 border-b border-gray-100">
+                          Contact Us
+                        </a>
+                      </li>
+                      <li>
+                        <a href="#" aria-label="About us" title="About us" class="block py-3 text-lg font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400 border-b border-gray-100">
+                          About us
+                        </a>
+                      </li>
+                      <li class="pt-6">
+                        <a
+                          href="#"
+                          class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
+                          aria-label="Get Quote"
+                          title="Get Quote"
+                        >
+                          Get Quote
+                        </a>
+                      </li>
+                    </ul>
+                  </nav>
                 </div>
-                <nav>
-                  <ul class="space-y-4">
-                    <li>
-                      <a href="#" aria-label="Our product" title="Our product" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
-                        Product
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" aria-label="Process" title="Process" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
-                        Process
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" aria-label="About us" title="About Us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
-                        Contact Us
-                      </a>
-                    </li>
-                    <li>
-                      <a href="#" aria-label="Contact us" title="Contact us" class="font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400">
-                        About us
-                      </a>
-                    </li>
-                  </ul>
-                </nav>
               </div>
             </div>
           </div>
@@ -121,55 +133,43 @@ export default component$(() => {
       </div>
 
 
-      <div class="relative flex flex-col-reverse px-4 py-16 mx-auto lg:block lg:flex-col lg:py-32 xl:py-48 md:px-8 sm:max-w-xl md:max-w-full ">
-        <div class="z-0 flex justify-center h-full -mx-4 overflow-hidden lg:pt-24 lg:pb-16 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
+      <div class="relative flex flex-col-reverse px-4 py-12 mx-auto lg:block lg:flex-col lg:py-24 xl:py-32 md:px-8 sm:max-w-xl md:max-w-full lg:py-32 xl:py-48">
+        <div class="z-0 flex justify-center h-full -mx-4 overflow-hidden lg:pt-20 lg:pb-12 lg:pr-8 xl:pr-0 lg:w-1/2 lg:absolute lg:justify-end lg:bottom-0 lg:left-0 lg:items-center">
           <img
             src="https://kitwind.io/assets/kometa/laptop.png"
             width={1020}
             height={640}
-            class="object-cover object-right w-full h-auto lg:w-auto lg:h-full" alt="" />
+            class="object-cover object-right w-full h-64 sm:h-80 lg:h-full lg:w-auto lg:max-h-[500px]"
+            alt="Laptop showing software interface"
+            loading="lazy"
+          />
         </div>
         <div class="relative flex justify-end max-w-xl mx-auto xl:pr-32 lg:max-w-screen-xl">
-          <div class="mb-16 lg:pr-5 lg:max-w-lg lg:mb-0">
-            <div class="max-w-xl mb-6">
-              <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-                We will bring your <br class="hidden md:block" />
+          <div class="mb-12 lg:pr-5 lg:max-w-lg lg:mb-0">
+            <div class="max-w-xl mb-8">
+              <h2 class="max-w-lg mb-6 font-sans text-2xl font-bold tracking-tight text-gray-900 sm:text-3xl lg:text-4xl sm:leading-tight lg:leading-none">
+                We will bring your <br class="hidden sm:block" />
                 business
-                <span class="inline-block text-deep-purple-accent-400 px-2">online</span>
+                <span class="inline-block text-deep-purple-accent-400 px-1 sm:px-2">online</span>
               </h2>
-              <p class="text-base text-gray-700 md:text-lg">
+              <p class="text-sm text-gray-700 sm:text-base md:text-lg leading-relaxed">
                 Transform how you work and serve your customers with tailored software solutions. Let's build something great together for your inhouse operations.
               </p>
             </div>
-            {/* <form>
-              <div class="flex flex-col md:flex-row">
-                <input
-                  placeholder="Name"
-                  type="text"
-                  class="flex-grow w-full h-12 px-4 mb-2 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mr-2 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                />
-                <input
-                  placeholder="Email"
-                  type="text"
-                  class="flex-grow w-full h-12 px-4 mb-3 transition duration-200 bg-white border border-gray-300 rounded shadow-sm appearance-none md:mb-0 focus:border-deep-purple-accent-400 focus:outline-none focus:shadow-outline"
-                />
-              </div>
-              <div class="flex items-center mt-4">
-                <button
-                  type="submit"
-                  class="bg-deep-purple-600 inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-                >
-                  Reach Out
-                </button>
-                <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800">Learn more</a>
-              </div>
-            </form> */}
-            <button
-              type="submit"
-              class="bg-deep-purple-600 inline-flex items-center justify-center h-12 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-            >
-              Reach Out
-            </button>
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4">
+              <button
+                type="button"
+                class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none text-sm sm:text-base w-full sm:w-auto"
+              >
+                Reach Out
+              </button>
+              <a href="/contact-us" aria-label="Learn more" class="inline-flex items-center justify-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800 text-sm sm:text-base text-center">
+                Learn more
+                <svg class="inline-block w-4 h-4 ml-2" fill="currentColor" viewBox="0 0 12 12">
+                  <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z"></path>
+                </svg>
+              </a>
+            </div>
           </div>
         </div>
       </div>
