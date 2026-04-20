@@ -12,7 +12,11 @@ export const RouterHead = component$(() => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="icon" type="image/png" href="/favicon.png" />
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossOrigin="anonymous"
+      />
 
       {head.meta.map((m) => (
         <meta key={m.key} {...m} />
@@ -22,9 +26,14 @@ export const RouterHead = component$(() => {
         <link key={l.key} {...l} />
       ))}
 
-      {head.styles.map((s) => (
-        <style key={s.key} {...s.props} dangerouslySetInnerHTML={s.style} />
-      ))}
+      {head.styles.map((s) => {
+        // eslint-disable-next-line @typescript-eslint/no-unused-vars
+        const { dangerouslySetInnerHTML: _dih, ...rest } = (s.props ??
+          {}) as Record<string, unknown>;
+        return (
+          <style key={s.key} {...rest} dangerouslySetInnerHTML={s.style} />
+        );
+      })}
     </>
   );
 });

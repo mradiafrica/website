@@ -8,7 +8,7 @@ RUN bun install --frozen-lockfile
 COPY . .
 RUN bun run build
 
-FROM oven/bun:latest AS runner
+FROM node:22-slim AS runner
 
 ENV NODE_ENV=production
 WORKDIR /app
@@ -21,4 +21,4 @@ COPY --from=builder /app/server ./server
 ARG PORT
 EXPOSE ${PORT:-3000}
 
-CMD ["bun", "server/entry.fastify"]
+CMD ["node", "server/entry.fastify.js"]

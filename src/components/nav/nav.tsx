@@ -1,4 +1,5 @@
 import { component$, useStore, $ } from "@builder.io/qwik";
+import ImgLogo from "~/media/image-removebg-preview.png?jsx";
 
 const links = [
   { label: "Work", href: "#work" },
@@ -19,7 +20,7 @@ export const Nav = component$(() => {
       <div class="mx-auto flex h-16 max-w-[1080px] items-center justify-between px-8">
         <div class="flex items-center gap-10">
           <a href="/">
-            <img src="/image-removebg-preview.png" alt="Logo" class="w-28" />
+            <ImgLogo alt="Logo" class="w-28" />
           </a>
           <div class="hidden items-center gap-8 lg:flex">
             {links.map((link) => (
@@ -62,7 +63,7 @@ export const Nav = component$(() => {
           />
           <div class="relative z-10 flex h-full w-72 flex-col gap-6 bg-bg p-8">
             <a href="/">
-              <img src="/image-removebg-preview.png" alt="Logo" class="w-28" />
+              <ImgLogo alt="Logo" class="w-28" />
             </a>
             <div class="flex flex-col gap-4">
               {links.map((link) => (
