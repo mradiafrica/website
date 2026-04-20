@@ -17,7 +17,7 @@ const items = [
 
 const ItemList = component$(() => {
   return (
-    <>
+    <div class="flex shrink-0 items-center gap-8">
       {items.map((item) => (
         <>
           <span
@@ -31,7 +31,7 @@ const ItemList = component$(() => {
           </span>
         </>
       ))}
-    </>
+    </div>
   );
 });
 
