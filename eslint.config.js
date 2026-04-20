@@ -45,6 +45,7 @@ export default [
         Headers: "readonly",
         caches: "readonly",
         self: "readonly",
+        Bun: "readonly",
       },
     },
     rules: {
