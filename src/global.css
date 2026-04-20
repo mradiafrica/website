@@ -96,7 +96,7 @@ button {
 .wrap {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding-inline: 2rem;
 }
 
 .font-syne {
@@ -129,6 +129,6 @@ button {
 
 @media (max-width: 560px) {
   .wrap {
-    padding: 0 1.25rem;
+    padding-inline: 1.25rem;
   }
 }
