@@ -136,6 +136,7 @@ export const Contact = component$(() => {
                   onInput$={(_, el) => (form.email = el.value)}
                 />
                 <select
+                  aria-label="Project Type"
                   class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-[#2B6CB0] focus:outline-none"
                   value={form.projectType}
                   onChange$={(_, el) => (form.projectType = el.value)}
@@ -150,6 +151,7 @@ export const Contact = component$(() => {
                   <option value="other">Other</option>
                 </select>
                 <select
+                  aria-label="Budget Range"
                   class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-[#2B6CB0] focus:outline-none"
                   value={form.budget}
                   onChange$={(_, el) => (form.budget = el.value)}

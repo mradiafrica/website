@@ -10,11 +10,19 @@ export const RouterHead = component$(() => {
       <title>{head.title}</title>
       <link rel="canonical" href={loc.url.href} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <link rel="icon" type="image/png" href="/favicon.png" />
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <link
-        rel="preconnect"
-        href="https://fonts.gstatic.com"
+        rel="preload"
+        href="/fonts/dm-sans-latin.woff2"
+        as="font"
+        type="font/woff2"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/fonts/syne-latin.woff2"
+        as="font"
+        type="font/woff2"
         crossOrigin="anonymous"
       />
 

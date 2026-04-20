@@ -12,7 +12,7 @@ export const Footer = component$(() => {
               style={{ filter: "brightness(2)" }}
               alt="Mradi Africa"
             />
-            <p class="mt-1 text-xs text-gray-500">
+            <p class="mt-1 text-xs text-gray-400">
               Software Development Agency
             </p>
           </div>
@@ -50,25 +50,25 @@ export const Footer = component$(() => {
           </nav>
         </div>
         <div class="mt-8 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
-          <p class="text-xs text-gray-500">
+          <p class="text-xs text-gray-400">
             © 2026 Mradi Africa. All rights reserved.
           </p>
           <div class="flex gap-4">
             <a
               href="#"
-              class="text-sm text-gray-500 transition-colors hover:text-white"
+              class="text-sm text-gray-400 transition-colors hover:text-white"
             >
               Twitter
             </a>
             <a
               href="#"
-              class="text-sm text-gray-500 transition-colors hover:text-white"
+              class="text-sm text-gray-400 transition-colors hover:text-white"
             >
               GitHub
             </a>
             <a
               href="#"
-              class="text-sm text-gray-500 transition-colors hover:text-white"
+              class="text-sm text-gray-400 transition-colors hover:text-white"
             >
               LinkedIn
             </a>
