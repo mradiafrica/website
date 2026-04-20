@@ -1,15 +1,13 @@
 {
-  "name": "my-qwik-empty-starter",
-  "description": "App with Routing built-in ready to create your app",
+  "name": "mradi-africa-website",
+  "description": "Mradi Africa — Software Development Agency Website",
   "engines": {
     "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },
-  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
   "private": true,
   "trustedDependencies": [
     "sharp"
   ],
-  "trustedDependencies-annotation": "Needed for bun to allow running install scripts",
   "type": "module",
   "scripts": {
     "build": "qwik build",
@@ -17,15 +15,14 @@
     "build.preview": "vite build --ssr src/entry.preview.tsx",
     "build.server": "vite build -c adapters/fastify/vite.config.ts",
     "build.types": "tsc --incremental --noEmit",
-    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
     "fmt": "prettier --write .",
     "fmt.check": "prettier --check .",
     "lint": "eslint \"src/**/*.ts*\"",
     "preview": "qwik build preview && vite preview --open",
-    "serve": "node server/entry.fastify",
-    "start": "node server/entry.fastify",
+    "serve": "bun server/entry.fastify",
+    "start": "bun server/entry.fastify",
     "qwik": "qwik"
   },
   "devDependencies": {
@@ -35,7 +32,7 @@
     "@fastify/static": "^9.0.0",
     "@tailwindcss/postcss": "^4.2.1",
     "@types/eslint": "^8.56.6",
-    "@types/node": "^20.12.7",
+    "@types/node": "^22.15.3",
     "@typescript-eslint/eslint-plugin": "^8.0.0",
     "@typescript-eslint/parser": "^8.0.0",
     "autoprefixer": "^10.4.27",
@@ -52,6 +49,5 @@
     "undici": "*",
     "vite": "^7.3.1",
     "vite-tsconfig-paths": "^6.1.1"
-  },
-  "packageManager": "pnpm@9.1.0-0+sha256.c557b24d2298d9b5e3be7086ebf55a28253b008324d545f72645a6de89844102"
+  }
 }

@@ -1,30 +1,24 @@
-# Build stage
-FROM node:lts-alpine AS builder
- 
-USER node
-WORKDIR /home/node
- 
-COPY package*.json .
-RUN npm install
-RUN npm ci
- 
-COPY --chown=node:node . .
-RUN npm run build
- 
- 
-# Final run stage
-FROM node:lts-alpine AS runner
- 
-ENV NODE_ENV production
-USER node
-WORKDIR /home/node
- 
-COPY --from=builder --chown=node:node /home/node/package*.json .
-COPY --from=builder --chown=node:node /home/node/node_modules ./node_modules
-COPY --from=builder --chown=node:node /home/node/dist ./dist
-COPY --from=builder --chown=node:node /home/node/server ./server
- 
+FROM oven/bun:latest AS builder
+
+WORKDIR /app
+
+COPY package.json bun.lock ./
+RUN bun install --frozen-lockfile
+
+COPY . .
+RUN bun run build
+
+FROM oven/bun:latest AS runner
+
+ENV NODE_ENV=production
+WORKDIR /app
+
+COPY --from=builder /app/package.json ./
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/server ./server
+
 ARG PORT
 EXPOSE ${PORT:-3000}
- 
-CMD ["node", "server/entry.fastify"]
+
+CMD ["bun", "server/entry.fastify"]
