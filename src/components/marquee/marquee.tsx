@@ -18,7 +18,7 @@ const items = [
 const ItemList = component$(() => {
   return (
     <>
-      {items.map((item, i) => (
+      {items.map((item) => (
         <>
           <span
             key={item}
@@ -26,11 +26,9 @@ const ItemList = component$(() => {
           >
             {item}
           </span>
-          {i < items.length - 1 && (
-            <span key={`dot-${i}`} class="text-ink-3/40">
-              ·
-            </span>
-          )}
+          <span key={`dot-${item}`} class="text-ink-3/40">
+            ·
+          </span>
         </>
       ))}
     </>
@@ -41,11 +39,10 @@ export const Marquee = component$(() => {
   return (
     <div class="border-border overflow-hidden border-y bg-bg py-4">
       <div
-        class="flex items-center gap-8 whitespace-nowrap"
+        class="flex w-max items-center gap-8 whitespace-nowrap"
         style={{ animation: "scroll 30s linear infinite" }}
       >
         <ItemList />
-        <span class="text-ink-3/40">·</span>
         <ItemList />
       </div>
     </div>
