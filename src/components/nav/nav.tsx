@@ -38,7 +38,7 @@ export const Nav = component$(() => {
         <div class="flex items-center gap-4">
           <a
             href="#contact"
-            class="hidden rounded-card-sm bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#22578A] lg:inline-flex"
+            class="hidden rounded-card-sm bg-accent px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-accent-hover lg:inline-flex"
           >
             Start a project
           </a>
@@ -79,7 +79,7 @@ export const Nav = component$(() => {
             </div>
             <a
               href="#contact"
-              class="rounded-card-sm bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-[#22578A]"
+              class="rounded-card-sm bg-accent px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-accent-hover"
               onClick$={toggle$}
             >
               Start a project

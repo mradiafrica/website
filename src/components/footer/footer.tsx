@@ -3,7 +3,7 @@ import ImgLogo from "~/media/image-removebg-preview.png?jsx";
 
 export const Footer = component$(() => {
   return (
-    <footer class="border-t border-white/10 bg-[#1A1814] text-white">
+    <footer class="border-t border-white/10 bg-bg-dark text-white">
       <div class="mx-auto max-w-[1080px] px-8 py-12">
         <div class="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-center">
           <div>

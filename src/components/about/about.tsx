@@ -9,7 +9,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const About = component$(() => {
   return (
-    <section id="about" class="wrap py-24 lg:py-32">
+    <section id="about" class="wrap py-16 sm:py-20 lg:py-32">
       <div class="grid grid-cols-1 items-start gap-16 lg:grid-cols-2">
         <div class="animate-fade-up">
           <span class="font-syne text-xs font-medium uppercase tracking-[0.2em] text-accent">

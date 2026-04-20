@@ -31,7 +31,7 @@ const delayClasses = ["delay-0", "delay-1", "delay-2", "delay-3"];
 
 export const Process = component$(() => {
   return (
-    <section id="process" class="wrap py-24 lg:py-32">
+    <section id="process" class="wrap py-16 sm:py-20 lg:py-32">
       <div>
         <p class="font-syne text-xs font-medium uppercase tracking-[0.2em] text-accent">
           How We Work

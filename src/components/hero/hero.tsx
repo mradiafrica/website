@@ -2,7 +2,7 @@ import { component$ } from "@builder.io/qwik";
 
 export const Hero = component$(() => {
   return (
-    <section id="hero" class="wrap py-24 lg:py-32">
+    <section id="hero" class="wrap py-16 sm:py-20 lg:py-32">
       <p class="animate-fade-up mb-4 font-syne text-xs font-medium uppercase tracking-[0.2em] text-accent">
         Software Development Agency
       </p>
@@ -16,7 +16,7 @@ export const Hero = component$(() => {
         from concept to scale.
       </p>
       <div class="animate-fade-up delay-3 mt-8 flex gap-4">
-        <button class="rounded-card-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-[#22578A]">
+        <button class="rounded-card-sm bg-accent px-6 py-3 font-medium text-white transition-colors hover:bg-accent-hover">
           Start a project
         </button>
         <a

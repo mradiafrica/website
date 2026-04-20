@@ -15,6 +15,9 @@ export default {
         "ink-3": "var(--ink-3)",
         accent: "var(--accent)",
         "accent-light": "var(--accent-light)",
+        "accent-hover": "var(--accent-hover)",
+        "accent-on-dark": "var(--accent-on-dark)",
+        "bg-dark": "var(--bg-dark)",
       },
       borderColor: {
         DEFAULT: "var(--border)",

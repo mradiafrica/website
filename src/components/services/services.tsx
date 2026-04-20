@@ -50,7 +50,7 @@ const delayClasses = [
 
 export const Services = component$(() => {
   return (
-    <section id="services" class="wrap py-24 lg:py-32">
+    <section id="services" class="wrap py-16 sm:py-20 lg:py-32">
       <div>
         <p class="font-syne text-xs font-medium uppercase tracking-[0.2em] text-accent">
           What We Do

@@ -15,11 +15,11 @@ export const Contact = component$(() => {
   });
 
   return (
-    <section id="contact" class="bg-[#1A1814] py-24 text-white lg:py-32">
-      <div class="mx-auto max-w-[1080px] px-8">
+    <section id="contact" class="bg-bg-dark py-16 text-white sm:py-20 lg:py-32">
+      <div class="wrap">
         <div class="grid grid-cols-1 gap-16 lg:grid-cols-2">
           <div>
-            <p class="font-syne text-xs font-medium uppercase tracking-[0.2em] text-[#6B9DD6]">
+            <p class="font-syne text-xs font-medium uppercase tracking-[0.2em] text-accent-on-dark">
               Get in Touch
             </p>
             <h2 class="mt-2 font-syne text-3xl font-bold text-white sm:text-4xl">
@@ -31,7 +31,7 @@ export const Contact = component$(() => {
             </p>
             <div class="mt-8 space-y-4">
               <div class="flex items-center gap-3">
-                <span class="text-[#6B9DD6]">
+                <span class="text-accent-on-dark">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -50,7 +50,7 @@ export const Contact = component$(() => {
                 <span class="text-sm text-gray-300">hello@mradiafrica.com</span>
               </div>
               <div class="flex items-center gap-3">
-                <span class="text-[#6B9DD6]">
+                <span class="text-accent-on-dark">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -68,7 +68,7 @@ export const Contact = component$(() => {
                 <span class="text-sm text-gray-300">+254 758 337 480</span>
               </div>
               <div class="flex items-center gap-3">
-                <span class="text-[#6B9DD6]">
+                <span class="text-accent-on-dark">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="20"
@@ -92,7 +92,7 @@ export const Contact = component$(() => {
           <div>
             {form.submitted ? (
               <div class="flex h-full flex-col items-center justify-center text-center">
-                <span class="mb-4 text-[#6B9DD6]">
+                <span class="mb-4 text-accent-on-dark">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="48"
@@ -124,20 +124,20 @@ export const Contact = component$(() => {
                 <input
                   type="text"
                   placeholder="Name"
-                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-[#2B6CB0] focus:outline-none"
+                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-accent focus:outline-none"
                   value={form.name}
                   onInput$={(_, el) => (form.name = el.value)}
                 />
                 <input
                   type="email"
                   placeholder="Email"
-                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-[#2B6CB0] focus:outline-none"
+                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-accent focus:outline-none"
                   value={form.email}
                   onInput$={(_, el) => (form.email = el.value)}
                 />
                 <select
                   aria-label="Project Type"
-                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-[#2B6CB0] focus:outline-none"
+                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-accent focus:outline-none"
                   value={form.projectType}
                   onChange$={(_, el) => (form.projectType = el.value)}
                 >
@@ -152,7 +152,7 @@ export const Contact = component$(() => {
                 </select>
                 <select
                   aria-label="Budget Range"
-                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-[#2B6CB0] focus:outline-none"
+                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-accent focus:outline-none"
                   value={form.budget}
                   onChange$={(_, el) => (form.budget = el.value)}
                 >
@@ -167,13 +167,13 @@ export const Contact = component$(() => {
                 <textarea
                   placeholder="Message"
                   rows={4}
-                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-[#2B6CB0] focus:outline-none"
+                  class="w-full rounded-card-sm border border-white/10 bg-white/5 px-4 py-3 text-sm text-white placeholder:text-gray-500 focus:border-accent focus:outline-none"
                   value={form.message}
                   onInput$={(_, el) => (form.message = el.value)}
                 />
                 <button
                   type="submit"
-                  class="mt-2 w-full rounded-card-sm bg-accent py-3 font-medium text-white transition-colors hover:bg-[#22578A]"
+                  class="mt-2 w-full rounded-card-sm bg-accent py-3 font-medium text-white transition-colors hover:bg-accent-hover"
                 >
                   Send Message
                 </button>
